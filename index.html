@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odd and Even Number Calculator</title>
+</head>
+
+<body>
+    <h1>Odd and Even Number Calculator</h1>
+
+    <form onsubmit="checkOddEven(); return false">
+        <label for="num">
+            <input type="number" id="num" placeholder="Enter Number">
+        </label>
+
+        <button type="submit">Check Odd or Even</button>
+    </form>
+
+    <h3 id="showResult"></h3>
+
+    <script>
+        function checkOddEven() {
+            let userInput = document.querySelector("#num").value
+            let showResult = document.querySelector("#showResult")
+            let result = userInput % 2;
+
+            if(result == 0){
+                showResult.innerHTML = `The number ${userInput} is an Even Number`
+            }
+            else{
+                showResult.innerHTML = `The number ${userInput} is an Odd Number`
+            }
+        }
+    </script>
+</body>
+
+</html>
